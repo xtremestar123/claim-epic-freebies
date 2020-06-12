@@ -6,18 +6,39 @@ This is a supplementary repository for [Revadike/epicgames-freebies-claimer](htt
 
 ## Setup
 
-All you need to set this up, is to create 3 secret values for this repository
+All you need to set this up, is to follow through this guide.
 
-1. [Fork this repo](../../fork)
+1. Click [this link](https://github.com/maximousblk/claim-epic-freebies/fork) to fork the repo or use the button.
+
+   <p align="center">
+     <img src="https://i.imgur.com/WRxfXmg.png">
+   </p>
+
 2. Go to [Actions tab](../../actions) and click on the big green button that says "I understand my workflows, go ahead and run them"
+
+   <p align="center">
+     <img src="https://i.imgur.com/gAsnfRv.png">
+   </p>
+
 3. Go to the [secrets menu in settings tab](../../settings/secrets)
+
+   <p align="center">
+     <img src="https://i.imgur.com/k21dFyM.png">
+   </p>
+
 4. Create 3 new secrets with the name `USERNAME`, `PASSWORD` and `SECRETKEY` (all uppercase) and update the secrets with the corresponding values
 
    - `USERNAME` - Your EpicGames email address
    - `PASSWORD` - Your EpicGames password
-   - `SECRETKEY` - Your Authenticator Key for 2FA
+   - `SECRETKEY` - Your Authenticator Key for 2FA *
 
-You can skip or delete `SECRETKEY` if 2FA is disabled. The two-step verification secret will be displayed when you enable enable two-step verification using the "Authenticator" app. If you have already enabled it, you can see it by turning it off and then on again.
+    \* You can skip or delete `SECRETKEY` if 2FA is disabled. The two-step verification secret will be displayed when you enable enable two-step verification using the "Authenticator" app. If you have already enabled it, you can see it by turning it off and then on again.
+
+
+   <p align="center">
+     <img src="https://i.imgur.com/4q9GyOk.png">
+   </p>
+
 
 Yep, that's it. This will run as scheduled and automatically claim free games available.
 
@@ -25,7 +46,7 @@ Yep, that's it. This will run as scheduled and automatically claim free games av
 
 You can change the behavior of this workflow by editing the [claim.yml](.github/workflows/claim.yml) file.
 
-#### Trigger schedule
+#### Schedule
 
 You can change the trigger schedule using cron expressions. You can use [crontab guru](https://crontab.guru/) if you don't know how cron expressions work.
 
@@ -34,11 +55,11 @@ schedule:
   - cron: "0 0 * * *" # Everyday at 00:00 UTC
 ```
 
-**Note:** _The schedule trigger of GitHub Actions is a bit inaccurate, so there may be a delay of about 5 to 10 minutes._
+**Note:** _The scheduler of GitHub Actions is a bit inaccurate, so there may be a delay of about 5 to 10 minutes._
 
 #### Multiple Accounts
 
-If you want to set this up for multiple accounts, You need to create more secrets. You can label them accordingly for easy identification. You also need to create more jobs in order to do this.
+If you want to set this up for multiple accounts, You need to create more secrets and jobs. You can label them accordingly for easy identification. You also need to create more jobs in order to do this.
 
 ```yml
 jobs:
@@ -56,7 +77,7 @@ jobs:
   ...
 ```
 
-#### Timeout limits
+#### Timeout limit
 
 This is setup because sometimes the script fails to login and asks for manual login, which you can't do. So, it would just wait forever.
 
