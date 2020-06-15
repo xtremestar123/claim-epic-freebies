@@ -4,6 +4,8 @@ EpicGames Weekly Giveaways Auto Claimer
 
 This is a supplementary repository for [Revadike/epicgames-freebies-claimer](https://github.com/Revadike/epicgames-freebies-claimer)
 
+Please leave a :star: star :star: if you find this helpful.
+
 ## Setup
 
 All you need to set this up, is to follow through this guide.
