@@ -29,7 +29,7 @@ jobs:
             - name: Install dependencies
               run: yarn
             
-            - name: Hotfix for \#4 # https://github.com/xuac/claim-epic-freebies/issues/4
+            - name: Hotfix
               run: mkdir .egstore
 
             - name: Get Epic Freebies
@@ -51,6 +51,9 @@ jobs:
 
             - name: Install dependencies
               run: yarn
+            
+            - name: Hotfix
+              run: mkdir .egstore
 
             - name: Get Epic Freebies
               run: yarn start ${{secrets.username2}} ${{secrets.password2}} 0 ${{secrets.secretkey2}}
